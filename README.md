@@ -58,4 +58,4 @@ Bu projeler **MIT Lisansı** ile lisanslanmıştır. [Lisans Detayları](LICENSE
 
 ## İletişim
 
-Herhangi bir soru, öneri veya katkı için bana [GitHub üzerinden](https://github.com/kullaniciadi) ulaşabilirsiniz.
+Herhangi bir soru, öneri veya katkı için bana [GitHub üzerinden](https://github.com/FerhatAras) ulaşabilirsiniz.
