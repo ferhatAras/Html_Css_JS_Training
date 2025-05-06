@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Döviz</title>
+    <link rel="stylesheet" href="stye.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Döviz Çevirici</h1>
+      <div class="currencyContainer">
+        <select name="currencyFirst" id="currencyFirst">
+          <option value="TRY">TRY</option>
+          <option value="USD" selected>USD</option>
+          <option value="EUR">EUR</option>
+          <option value="AUD">AUD</option>
+          <option value="JPY">JPY</option>
+          <option value="CAD">CAD</option>
+          <option value="GBP">GBP</option>
+        </select>
+        <input type="number" id="count" value="1" min="0" />
+      </div>
+      <div class="currencyContainer">
+        <select name="currencySecond" id="currencySecond">
+          <option value="TRY" selected>TL</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="AUD">AUD</option>
+          <option value="JPY">JPY</option>
+          <option value="CAD">CAD</option>
+          <option value="GBP">GBP</option>
+        </select>
+        <span id="equal">1</span>
+      </div>
+      <p id="exchangeRate">1 USD = 35.36 TRY</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+/* Tüm öğeler için kutu modeli düzenlemesi */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ana gövde düzeni */
+body {
+  background: linear-gradient(135deg, blueviolet, deepskyblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Arial", sans-serif; /* Daha modern yazı tipi */
+  color: #333; /* Genel metin rengi */
+}
+
+/* Ana konteyner */
+.container {
+  width: 90%;
+  max-width: 500px;
+  background: #ffc1e3;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  text-align: center;
+}
+
+/* Mesaj alanı */
+textarea {
+  width: 100%;
+  height: 150px;
+  resize: none;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  background: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover ve odaklanma efekti */
+textarea:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+}
+
+/* Karakter sayaç konteyneri */
+.counterCon {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Sayaç metni */
+.counterCon p {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Toplam karakter rengi */
+.totalCounter {
+  color: blue;
+}
+
+/* Kalan karakter rengi */
+.remainingCounter {
+  color: red;
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+  textarea {
+    font-size: 14px;
+  }
+  .counterCon p {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SideBar</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head> 
+  <body class="collapsed">
+    <div class="expand-btn">
+      <i class="bi bi-chevron-right"></i>
+    </div>
+    <nav class="sidebar-top">
+      <a href="#" class="logoWrapper">
+        <img src="img/logo.png" alt="" class="logo" />
+        <h1 class="hide">Menü</h1>
+      </a>
+      <div class="sidebar-links">
+        <ul>
+          <li>
+            <a href="#panel" class="tooltip" title="Panel">
+              <i class="bi bi-speedometer2"></i>
+              <span>Panel</span>
+            </a>
+          </li>
+          <li>
+            <a href="#project" class="tooltip" title="Project">
+              <i class="bi bi-bar-chart"></i>
+              <span>Project</span>
+            </a>
+          </li>
+          <li>
+            <a href="#performance" class="tooltip" title="Performance">
+              <i class="bi bi-graph-up"></i>
+              <span>Performance</span>
+            </a>
+          </li>
+          <li>
+            <a href="#gelir" class="tooltip" title="Gelir">
+              <i class="bi bi-wallet2"></i>
+              <span>Gelir</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-links">
+          <ul>
+            <li>
+              <a href="#yardim" class="tooltip" title="Yardım">
+                <i class="bi bi-question-circle"></i>
+                <span>Yardım</span>
+              </a>
+            </li>
+            <li>
+              <a href="#ayarlar" class="tooltip" title="Ayarlar">
+                <i class="bi bi-gear"></i>
+                <span>Ayarlar</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar-profile">
+          <div class="avatar_wrapper">
+            <img class="avatar" src="img/avatar.jpg" alt="" />
+            <div class="online_status"></div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <script src="script.js"></script>
+  </body>
+</html>

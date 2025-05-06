@@ -1,0 +1,219 @@
+:root {
+  --primary-color: #0e0f1a; /* Ana renk */
+  --text: #ececec; /* Metin rengi */
+  --sidebar-gray: #4b4e6d; /* Yan panel gri tonu */
+  --sidebar-gray-light: #a8acbd; /* Yan panel açık gri tonu */
+  --sidebar-gray-background: #3a3d5c; /* Yan panel arka plan rengi */
+  --success: #28a745; /* Başarı göstergesi rengi */
+  --button-color: #3a3d5c; /* Buton rengi */
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif; /* Genel yazı tipi ailesi */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Tüm elementler için varsayılan margin ve padding ayarları */
+}
+
+nav {
+  position: fixed; /* Sabit konum */
+  left: 0; /* Sol tarafa hizalı */
+  top: 0; /* Üst tarafa hizalı */
+  height: 100vh; /* Tam ekran yüksekliği */
+  width: 18rem; /* Genişlik */
+  background-color: var(--primary-color); /* Arka plan rengi */
+  display: flex;
+  flex-direction: column;
+  color: var(--text); /* Metin rengi */
+  transition: width 0.5s linear; /* Geçiş süresi */
+  overflow-y: hidden; /* Yatay kaydırmayı gizle */
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center; /* Orta hizalama */
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  gap: 20px; /* Aralarındaki boşluk */
+  text-decoration: none;
+  color: var(--text); /* Metin rengi */
+}
+
+.logo {
+  width: 54px; /* Logonun genişliği */
+  height: 50px; /* Logonun yüksekliği */
+  background-color: var(
+    --sidebar-gray-background
+  ); /* Logonun arka plan rengi */
+  border-radius: 15px; /* Köşeleri yuvarla */
+  transition: width 0.5s linear, height 0.5s linear; /* Geçiş süreleri */
+}
+
+.expand-btn {
+  position: fixed; /* Sabit konum */
+  top: 16px; /* Üstten mesafe */
+  left: 18rem; /* Soldan mesafe */
+  width: 40px; /* Genişlik */
+  height: 40px; /* Yükseklik */
+  display: flex;
+  justify-content: center; /* Yatayda ortalama */
+  align-items: center; /* Dikeyde ortalama */
+  border-radius: 50%; /* Tam daire */
+  box-shadow: rgba(96, 103, 235, 0.31) 0px 2px 8px 0px; /* Gölge efekti */
+  background-color: var(--button-color); /* Buton rengi */
+  color: #fff; /* Buton içeriği rengi */
+  cursor: pointer; /* İmleç tipi */
+  transition: transform 0.3s ease-in-out, left 0.5s linear, transform 0.6s; /* Geçiş süreleri */
+  z-index: 1; /* Üst katmanda görünmesi için */
+}
+
+.expand-btn i {
+  font-size: 1.5rem; /* İkon boyutu */
+}
+
+.sidebar-links {
+  padding: 8px 16px;
+  border-top: 1px solid var(--sidebar-gray-background); /* Üst kenar çizgisi */
+  flex-grow: 1;
+  overflow-y: hidden; /* Yatay kaydırmayı gizle */
+}
+
+.sidebar-links ul {
+  list-style: none; /* Liste stili yok */
+  padding-left: 0; /* Sol boşluğu kaldır */
+}
+
+.sidebar-links li {
+  position: relative;
+  margin: 8px 0;
+}
+
+.sidebar-links li a {
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  color: var(--sidebar-gray-light); /* Bağlantı rengi */
+  font-size: 1.25rem;
+  text-decoration: none; /* Alt çizgi yok */
+  border-radius: 10px; /* Köşeleri yuvarla */
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Geçiş süreleri */
+}
+
+.sidebar-links li a:hover,
+.sidebar-links li a:focus {
+  background-color: var(
+    --sidebar-gray-background
+  ); /* Bağlantının arka plan rengi */
+  color: var(--text); /* Bağlantı metni rengi */
+}
+
+.sidebar-links li a i {
+  margin-right: 10px; /* Sağ boşluk */
+  transition: margin-right 0.3s ease-in-out; /* Geçiş süresi */
+}
+
+.sidebar-profile {
+  border-top: 1px solid var(--sidebar-gray-background);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.avatar_wrapper {
+  position: relative;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%; /* Tam daire */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 300ms ease-in-out; /* Geçiş süresi */
+}
+
+.avatar:hover {
+  transform: scale(1.05); /* Üzerine gelindiğinde büyüt */
+}
+
+.online_status {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--success);
+  border-radius: 50%; /* Tam daire */
+  border: 2px solid var(--primary-color);
+}
+
+.avatar_name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-name {
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.email {
+  font-size: 0.9rem;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltipContent {
+  visibility: hidden;
+  position: absolute;
+  left: 75px;
+  padding: 6px 12px;
+  background-color: var(--sidebar-gray-background);
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+}
+
+body.collapsed nav {
+  width: 4rem; /* Yan panel genişliği daraltıldı */
+}
+
+body.collapsed .sidebar-links li a span,
+body.collapsed .sidebar-title,
+body.collapsed .logoWrapper h1 {
+  /* Yan panel daraltıldığında metinleri gizle */
+  display: none;
+}
+
+body.collapsed .logoWrapper {
+  justify-content: center; /* Yan panel daraltıldığında logoyu ortala */
+}
+
+body.collapsed .logo {
+  width: 40px; /* Küçülen logo genişliği */
+  height: 40px; /* Küçülen logo yüksekliği */
+}
+
+body.collapsed .sidebar-links li a i {
+  margin-right: 0;
+}
+
+body.collapsed .expand-btn {
+  left: 4rem; /* Butonun yeni konumu */
+  transform: rotate(360deg); /* 360 derece döndür */
+}

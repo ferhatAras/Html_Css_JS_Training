@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex; /* Ana elementleri yatay olarak merkezler */
+  justify-content: center; /* Yatay merkezleme */
+  align-items: center; /* Dikey merkezleme */
+  min-height: 100vh; /* Sayfanın yüksekliğini tarayıcı penceresine eşitler */
+  background-color: #243642; /* Arka plan rengi */
+  background-image: linear-gradient(90deg, #444 1px, transparent 1px),
+    /* Yatay çizgiler */ linear-gradient(180deg, #444 1px, transparent 1px); /* Dikey çizgiler */
+  background-size: 150px 150px; /* Karelerin boyutlarını 150x150 piksel olarak ayarlar */
+}
+
+main {
+  display: flex; /* İçerikleri esnek bir satırda düzenler */
+  justify-content: center; /* İçerikleri yatayda merkezler */
+  align-items: center; /* İçerikleri dikeyde merkezler */
+  width: 100%; /* Ana alanın genişliğini %100 yapar */
+}
+
+.list {
+  display: flex; /* Resim kutularını yan yana yerleştirir */
+  flex-wrap: wrap; /* Alan dolduğunda elemanları bir alt satıra taşır */
+  gap: 10px; /* Resim kutuları arasında boşluk bırakır */
+  justify-content: center; /* Tüm resimlerin ortalanmasını sağlar */
+  cursor: pointer;
+}
+
+.item {
+  flex: 0 1 calc(20%-10px); /* Elemanların genişliğini belirler, %20 olacak şekilde düzenler */
+  max-width: calc(20%-10px); /* Elemanların maksimum genişliğini %20 yapar */
+  box-sizing: border-box; /* Kenar boşluklarını kutu boyutuna dahil eder */
+}
+
+.item img {
+  width: 100%; /* Resim genişliğini kutu genişliğine eşitler */
+  height: 130px; /* Resim yüksekliğini sabitler */
+  object-fit: cover; /* Resimleri kırparak kutuya sığdırır */
+  border-radius: 5px; /* Köşeleri yuvarlar */
+  transition: transform 0.3s ease; /* Dönüşümde yumuşak bir geçiş sağlar */
+}
+
+.list {
+  transform-style: preserve-3d; /* 3D dönüştürme efektlerini korur */
+  transform: perspective(1000px); /* Derinlik algısı için perspektif ayarlar */
+}
+
+.list .item {
+  transition: 0.5s ease; /* Tüm dönüşümleri yumuşak bir şekilde yapar */
+  filter: brightness(0); /* Varsayılan olarak resimleri karartır */
+}
+
+.list .item:hover {
+  filter: brightness(
+    1
+  ); /* Fareyle üzerine gelindiğinde resmi tamamen görünür yapar */
+  transform: translateZ(200px); /* Resmi 3D uzayda ileri iter */
+}
+
+.list .item:hover + * {
+  filter: brightness(0.6); /* Sıradaki resmi biraz aydınlatır */
+  transform: translateZ(150px) rotateY(40deg); /* İleri iter ve Y ekseninde döndürür */
+}
+
+.list .item:hover + * + * {
+  filter: brightness(0.4); /* İkinci sıradaki resmi daha az aydınlatır */
+  transform: translateZ(70px) rotateY(20deg); /* Daha az ileri iter ve döndürür */
+}
+
+.list .item:hover + * + * + * {
+  filter: brightness(0.2); /* Üçüncü sıradaki resmi çok az aydınlatır */
+  transform: translateZ(30px) rotate(10deg); /* Daha az ileri iter ve X/Y ekseninde döndürür */
+}
+
+.list .item:has(+ *:hover) {
+  filter: brightness(
+    0.6
+  ); /* Yanındaki eleman fareyle seçildiğinde bu elemanı aydınlatır */
+  transform: translateZ(150px) rotateY(-40deg); /* Ters yönde döndürür ve ileri iter */
+}
+
+.list .item:has(+ * + *:hover) {
+  filter: brightness(
+    0.4
+  ); /* İkinci sıradaki eleman fareyle seçildiğinde bu elemanı aydınlatır */
+  transform: translateZ(70px) rotateY(-20deg); /* Daha az döndürme ve ileri itme uygular */
+}
+
+.list .item:has(+ * + * + *:hover) {
+  filter: brightness(
+    0.2
+  ); /* Üçüncü sıradaki eleman fareyle seçildiğinde bu elemanı karartır */
+  transform: translateZ(30px) rotateY(-10deg); /* Daha az döndürme ve ileri itme uygular */
+}

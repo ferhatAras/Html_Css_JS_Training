@@ -1,0 +1,60 @@
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #243642; /* Arka plan rengi */
+  background-image: linear-gradient(90deg, #444 1px, transparent 1px),
+    /* Yatay çizgiler */ linear-gradient(180deg, #444 1px, transparent 1px); /* Dikey çizgiler */
+  background-size: 150px 150px; /* Karelerin boyutlarını 150x150 piksel olarak ayarlar */
+}
+
+.gallery {
+  display: flex; /* Flex düzeni ile yana yana hizalamayı sağla */
+  justify-content: center; /* Yatayda ortalama */
+  gap: 10px; /* Görseller arasında boşluk */
+  flex-wrap: nowrap; /* Görsellerin satırlara bölünmesini engelle */
+}
+
+.gallery-image {
+  border: 5px solid #fff;
+  width: 200px; /* Sabit genişlik */
+  height: 200px; /* Sabit yükseklik */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Görselin büyümesi için animasyon */
+  flex-shrink: 0; /* Görsellerin küçülmesini engelle */
+}
+
+.expanded-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: pointer;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center; /* Yükseklik ve yatayda merkezleme */
+}
+
+.close-button {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  cursor: pointer;
+}

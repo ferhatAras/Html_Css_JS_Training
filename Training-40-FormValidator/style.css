@@ -1,0 +1,17 @@
+body {
+  background: #18230f !important;
+  display: flex;
+  height: 100vh;
+}
+
+.card {
+  box-shadow: rgba(240, 240, 245, 0.763) 0px 50px 100px -20px,
+    rgba(231, 234, 235, 0.3) 0px 30px 60px -20px !important;
+}
+.card-header {
+  background: #007bff !important;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

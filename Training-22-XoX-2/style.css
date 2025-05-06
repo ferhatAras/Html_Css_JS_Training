@@ -1,0 +1,104 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+  background: linear-gradient(0deg, #222831, #393e46);
+}
+.container {
+  position: relative; /* turn-container için referans noktası */
+  background: #393e46;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-gap: 10px;
+  margin-bottom: -1px;
+}
+.cell {
+  width: 136px;
+  height: 141px;
+  background-color: #fff;
+  font-size: 100px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 300ms all;
+  color: #00adb5;
+  display: flex;
+  border-radius: 5px;
+}
+.cell:hover {
+  background-color: #222831;
+}
+.message {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.restart-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.restart-button:hover {
+  transform: scale(1.5);
+}
+/* Oyuncu sırası göstergesi için stil */
+.turn-container {
+  position: absolute; /* Mutlak konumlandırma */
+  top: -5px; /* Container'in üst kısmına yerleştir */
+  left: 50%; /* Yatayda ortala */
+  transform: translateX(-50%); /* Tam ortalamak için */
+  width: 170px; /* Genişlik */
+  height: 80px; /* Yükseklik */
+  display: grid; /* Grid kullanımı */
+  grid-template-columns: 1fr 1fr; /* İki eşit sütun */
+  grid-template-rows: 1fr 1fr; /* İki eşit satır */
+  margin-bottom: 20px;
+  border-radius: 15px;
+  background-color: #393e46; /* Arka plan rengi */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Gölge efekti */
+}
+
+.turn-container h3 {
+  margin: 0; /* Başlık etiketinin varsayılan kenar boşluğunu kaldır */
+  grid-column: 1 / -1; /* Başlangıçtan sona kadar sütunları kapsar */
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Oyuncu sırası kutuları için stil */
+.turn-container .turn-box {
+  border: 3px solid #000; /* Siyah kenarlık */
+  font-size: 1.6rem; /* Yazı boyutu */
+  font-weight: 200; /* Kalın yazı tipi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Sıra göstergesinin arka planı için stil */
+.turn-container .bg {
+  position: absolute; /* Mutlak konumlandırma */
+  bottom: 0; /* Alt tarafa hizalanacak */
+  left: 0; /* Sol tarafa hizalanacak */
+  width: 85px; /* Genişlik */
+  height: 40px; /* Yükseklik */
+  background-color: #ff2e63; /* Arka plan rengi */
+  z-index: -1; /* Z-index ile diğer içeriklerin altında olacak şekilde ayarlama */
+}
+.win {
+  background: #ff2e63;
+}

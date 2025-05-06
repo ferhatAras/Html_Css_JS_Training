@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
+  background: linear-gradient(135deg, #ffdab9, #4169e1);
+}
+
+.SliderContainer {
+  position: relative;
+  width: 700px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 17px;
+}
+
+.imageContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: calc(700px * 6); /* Resim sayısına göre genişlik */
+}
+
+.imageContainer img {
+  width: 700px;
+  height: 500px;
+  object-fit: cover;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.icon:hover {
+  color: #000;
+}

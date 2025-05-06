@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html {
+  font-family: "roboto", sans-serif;
+  font-size: 14px;
+}
+:root {
+  --primary: #007fff;
+  --secondary: #6f7e8c;
+  --hover: #f5f5f5;
+  --text: #212121;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--primary);
+}
+.box {
+  background-color: white;
+  padding: 24px;
+  padding: 12px;
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+.input__wrapper {
+  position: relative;
+  padding: 15px 0px 0px;
+}
+.input__field {
+  border: none;
+  border-bottom: 2px solid var(--secondary);
+  outline: none;
+  font-size: 16px;
+  color: var(--text);
+  padding: 4px;
+  padding-right: 32px;
+  background-color: transparent;
+  transition: border-color 0.2s;
+  -webkit-transition: border-color 0.2s;
+  -moz-transition: border-color 0.2s;
+  -ms-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
+}
+.input__field::placeholder {
+  color: transparent;
+}
+.input__field:placeholder-shown ~ .input__label {
+  font-size: 16px;
+  cursor: pointer;
+  color: var(--secondary);
+  top: 20px;
+}
+label,
+.input__field:focus ~ .input__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  font-size: 14px;
+  left: -1px;
+  color: var(--secondary);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.input__field:focus ~ .input__label {
+  color: var(--primary);
+}
+.input__field:focus {
+  border-bottom: 2px solid var(--primary);
+}
+.input__icon {
+  position: absolute;
+  right: -6px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  padding: 2px;
+  bottom: -3px;
+  width: 22px;
+  height: 26px;
+  transform-origin: center;
+  cursor: pointer;
+}
+.input__icon:hover {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: var(--hover);
+}

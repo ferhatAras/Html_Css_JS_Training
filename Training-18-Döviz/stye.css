@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #243642; /* Arka plan rengi */
+  background-image: linear-gradient(90deg, #444 1px, transparent 1px),
+    /* Yatay çizgiler */ linear-gradient(180deg, #444 1px, transparent 1px); /* Dikey çizgiler */
+  background-size: 150px 150px; /* Kare boyutları */
+}
+
+.container {
+  background-color: blueviolet;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Hafif bir gölge */
+}
+
+.currencyContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 10px; /* Daha temiz görünüm için boşluk */
+}
+
+.currencyContainer select {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #575757; /* Daha modern bir görünüm için arka plan rengi */
+  color: white;
+}
+
+.currencyContainer input {
+  font-size: 25px;
+  text-align: right;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.currencyContainer span {
+  font-size: 25px;
+  color: white;
+  margin-right: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+}
+
+#exchangeRate {
+  font-weight: 600;
+  margin-top: 10px;
+  display: inline-block;
+}

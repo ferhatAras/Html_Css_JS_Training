@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karakter Sayaç</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Mesajınız</h2>
+      <textarea
+        placeholder="Lütfen mesajınızı giriniz."
+        maxlength="50"
+        id="textarea"
+      ></textarea>
+      <div class="counterCon">
+        <p>
+          Toplam Karakter: <span class="totalCounter" id="totalCounter">0</span>
+        </p>
+        <p>
+          Kalan Karakter Sayısı:
+          <span class="remainingCounter" id="remainingCounter">50</span>
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

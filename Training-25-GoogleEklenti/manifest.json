@@ -1,0 +1,11 @@
+{
+  "name": "Bio",
+  "version": "1.0.0",
+  "descrition": "Eğitim Amaçlı",
+  "manifest_version": 3,
+  "author": "Ferhat",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "icon.png"
+  }
+}

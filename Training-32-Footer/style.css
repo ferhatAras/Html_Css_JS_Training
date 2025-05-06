@@ -1,0 +1,174 @@
+* {
+  margin: 0; /* Varsayılan boşlukları sıfırla */
+  padding: 0; /* Varsayılan iç boşlukları sıfırla */
+  font-family: "poppins", sans-serif; /* Sayfanın genel yazı tipi */
+  box-sizing: border-box; /* Padding ve border'ı genişliğe dahil et */
+}
+
+body {
+  background: #eef8ff; /* Sayfanın arka plan rengini açık mavi yap */
+}
+
+footer {
+  width: 100%; /* Footer'ı tam genişlik yap */
+  position: absolute; /* Sayfanın en altına sabitle */
+  bottom: 0; /* Sayfanın altına yapıştır */
+  background: linear-gradient(
+    to right,
+    #00093c,
+    #2d0b00
+  ); /* Sağdan sola renk geçişi */
+  color: #eef8ff; /* Metin rengini açık mavi yap */
+  padding: 100px 0 30px; /* İç boşluklar */
+  border-top-left-radius: 125px; /* Sol üst köşeyi yuvarlat */
+  font-size: 13px; /* Metin boyutu */
+  line-height: 20px; /* Satır yüksekliği */
+}
+
+.row {
+  width: 85%; /* İçeriği %85 genişlikte tut */
+  margin: auto; /* Ortala */
+  display: flex; /* Flexbox kullan */
+  flex-wrap: wrap; /* Sığmazsa alt satıra geç */
+  align-items: flex-start; /* Üstten hizala */
+  justify-content: space-between; /* İçerikleri yatayda yay */
+}
+
+.col {
+  flex-basis: 25%; /* Sütunun genişliği %25 */
+  padding: 10px !important; /* İç boşluk ekle */
+}
+
+.col:nth-child(2) .col:nth-child(3) {
+  flex-basis: 15%; /* 2. ve 3. sütunun genişliğini %15 yap */
+}
+
+.logo {
+  width: 80px; /* Logo genişliği */
+  margin-bottom: 30px; /* Alt boşluk */
+}
+
+.col h3 {
+  width: fit-content; /* İçeriğe göre genişlik */
+  margin-bottom: 40px; /* Alt boşluk */
+  position: relative; /* Konum belirleme */
+}
+
+.email-id {
+  width: fit-content; /* İçeriğe göre genişlik */
+  border-bottom: 1px solid #ccc; /* Alt çizgi ekle */
+  margin: 20px 0; /* Üst ve alt boşluk */
+}
+
+ul li {
+  list-style: none; /* Madde işaretlerini kaldır */
+  margin-bottom: 12px; /* Alt boşluk */
+}
+
+ul li a {
+  text-decoration: none; /* Alt çizgiyi kaldır */
+  color: #fff; /* Metin rengini beyaz yap */
+}
+
+form {
+  padding-bottom: 15px; /* Alt iç boşluk */
+  display: flex; /* Yatay hizala */
+  align-items: center; /* İçeriği ortala */
+  justify-content: space-between; /* İçerikleri yay */
+  border-bottom: 1px solid #ccc; /* Alt çizgi ekle */
+  margin-bottom: 50px; /* Alt boşluk */
+}
+
+form i {
+  font-size: 18px; /* İkon boyutu */
+  margin-right: 10px; /* Sağ boşluk */
+}
+
+form input {
+  width: 100%; /* Genişliği tam yap */
+  background: transparent; /* Arka planı şeffaf yap */
+  color: #ccc; /* Metin rengini gri yap */
+  border: 0; /* Kenarlık kaldır */
+  outline: none; /* Seçim kenarlığını kaldır */
+  cursor: pointer; /* İmleci el yap */
+}
+
+form button {
+  background: transparent; /* Arka planı şeffaf yap */
+  border: 0; /* Kenarlık kaldır */
+  outline: none; /* Kenarlık kaldır */
+  cursor: pointer; /* İmleci el yap */
+}
+
+form button i {
+  font-size: 16px; /* İkon boyutu */
+  color: #ccc; /* İkon rengini gri yap */
+  cursor: pointer; /* İmleci el yap */
+}
+
+.social-icons i {
+  width: 40px; /* İkon kutusunun genişliği */
+  height: 40px; /* İkon kutusunun yüksekliği */
+  border-radius: 50%; /* Yuvarlak yap */
+  text-align: center; /* Metni ortala */
+  line-height: 40px; /* İkonu ortala */
+  font-size: 20px; /* İkon boyutu */
+  color: #000; /* İkon rengini siyah yap */
+  background: #fff; /* Arka planı beyaz yap */
+  margin-right: 15px; /* Sağ boşluk */
+  cursor: pointer; /* İmleci el yap */
+}
+
+hr {
+  width: 90%; /* Çizgiyi %90 genişlikte yap */
+  border: 0; /* Kenarlık kaldır */
+  border-bottom: 1px solid #ccc; /* Alt çizgi ekle */
+  margin: 20px auto; /* Üst ve alt boşluk, ortala */
+}
+
+.copyright {
+  text-align: center; /* Ortala */
+}
+
+.underline {
+  width: 100%; /* Genişliği tam yap */
+  height: 5px; /* Çizgi kalınlığı */
+  background: #767676; /* Gri arka plan */
+  border-radius: 3px; /* Yuvarlatılmış kenarlar */
+  position: absolute; /* Konum belirleme */
+  top: 25px; /* Yukarıdan mesafe */
+  left: 0; /* Soldan mesafe */
+  overflow: hidden; /* Taşan içeriği gizle */
+}
+
+.underline span {
+  width: 15px; /* Küçük kutu genişliği */
+  height: 100%; /* Yüksekliği tam yap */
+  border-radius: 3px; /* Kenarları yuvarlat */
+  background: #fff; /* Beyaz arka plan */
+  position: absolute; /* Konum belirleme */
+  top: 0; /* Yukarıdan mesafe */
+  left: 10px; /* Soldan mesafe */
+  animation: moving 2s linear infinite; /* Sürekli animasyon */
+}
+
+@keyframes moving {
+  0% {
+    left: -20px; /* Başlangıç noktası */
+  }
+  100% {
+    left: 100%; /* Bitiş noktası */
+  }
+}
+
+@media (max-width: 700px) {
+  footer {
+    bottom: unset; /* Footer'ı serbest bırak */
+  }
+  .col {
+    flex-basis: 100%; /* Sütunları tam genişlik yap */
+  }
+  .col:nth-child(2) .col:nth-child(3) {
+    flex-basis: 100%; /* Küçük sütunları da tam genişlik yap */
+  }
+}

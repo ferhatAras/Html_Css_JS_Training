@@ -1,0 +1,14 @@
+form {
+  background: white;
+  padding: 20px;
+  margin: auto;
+  max-width: 250px;
+}
+input {
+  display: block;
+  padding: 5px;
+  margin: 10px auto;
+}
+html {
+  background: wheat;
+}

@@ -1,0 +1,135 @@
+/* Tüm elementler için genel stil */
+* {
+  color: white; /* Yazı rengi beyaz */
+  font-family: sans-serif; /* Yazı tipi */
+  transition: 0.2s ease-in-out; /* Geçiş efektini yumuşatmak için */
+  margin: 0; /* Varsayılan kenar boşluklarını kaldır */
+  padding: 0; /* Varsayılan iç boşlukları kaldır */
+  box-sizing: border-box; /* Kutuların genişlik ve yükseklik hesaplamalarını düzeltmek için */
+}
+
+/* Body için stil */
+body {
+  display: flex; /* Flexbox ile düzenleme */
+  flex-direction: column; /* İçerikleri dikeyde sıralamak için */
+  justify-content: center; /* Dikeyde ortalamak için */
+  align-items: center; /* Yatayda ortalamak için */
+  height: 100vh; /* Tüm ekran yüksekliği */
+  margin: 0; /* Kenar boşluğunu kaldır */
+  background-color: #252a34; /* Arka plan rengi */
+  text-align: center; /* Metni ortalamak için */
+}
+
+/* Oyuncu sırası göstergesi için stil */
+.turn-container {
+  width: 170px; /* Genişlik */
+  height: 80px; /* Yükseklik */
+  display: grid; /* Grid kullanımı */
+  grid-template-columns: 1fr 1fr; /* İki eşit sütun */
+  grid-template-rows: 1fr 1fr; /* İki eşit satır */
+  position: relative; /* Konumlandırma için */
+  margin-bottom: 20px; /* Alt boşluk ekle */
+  border-radius: 15px;
+}
+
+.turn-container h3 {
+  margin: 0; /* Başlık etiketinin varsayılan kenar boşluğunu kaldır */
+  grid-column: 1 / -1; /* Başlangıçtan sona kadar sütunları kapsar */
+}
+
+/* Oyuncu sırası kutuları için stil */
+.turn-container .turn-box {
+  border: 3px solid #000; /* Siyah kenarlık */
+  font-size: 1.6rem; /* Yazı boyutu */
+  font-weight: 700; /* Kalın yazı tipi */
+}
+
+/* Oyuncu sırası kutularının içeriklerini ortalamak için */
+.turn-container .turn-box.align {
+  display: flex; /* Flexbox kullanımı */
+  justify-content: center; /* Yatayda ortalamak için */
+  align-items: center; /* Dikeyde ortalamak için */
+}
+
+/* Sıra göstergesinin arka planı için stil */
+.turn-container .bg {
+  position: absolute; /* Mutlak konumlandırma */
+  bottom: 0; /* Alt tarafa hizalanacak */
+  left: 0; /* Sol tarafa hizalanacak */
+  width: 85px; /* Genişlik */
+  height: 40px; /* Yükseklik */
+  background-color: #ff2e63; /* Arka plan rengi */
+  z-index: -1; /* Z-index ile diğer içeriklerin altında olacak şekilde ayarlama */
+}
+
+/* 3x3 oyun kutuları için stil */
+.main-grid {
+  display: grid; /* Grid kullanımı */
+  grid-template-columns: repeat(3, 1fr); /* 3 eşit sütun */
+  grid-template-rows: repeat(3, 1fr); /* 3 eşit satır */
+  gap: 5px; /* Kutular arası boşluk */
+  height: 350px; /* Yükseklik */
+  width: 350px; /* Genişlik */
+  border: 2px solid #000; /* Kenarlık */
+  margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* Oyun kutularının stilleri */
+.box {
+  cursor: pointer; /* Fare işaretçisini tıklanabilir hale getir */
+  font-size: 2rem; /* Yazı boyutu */
+  font-weight: 700; /* Kalın yazı tipi */
+  border: 2px solid #000; /* Kenarlık */
+  display: flex; /* Flexbox ile düzenleme */
+  justify-content: center; /* Yatayda ortalamak için */
+  align-items: center; /* Dikeyde ortalamak için */
+}
+
+/* Oyun kutularının üzerine gelindiğinde stil */
+.box:hover {
+  background-color: #ff2e63; /* Arka plan rengini değiştir */
+}
+
+/* Sonuç yazısı için stil */
+#results {
+  font-size: 1.5rem; /* Yazı boyutu */
+  margin-bottom: 20px; /* Alt boşluk */
+}
+
+/* Yeniden başlatma butonunun stilleri */
+#play-again {
+  background-color: #ff2e63; /* Arka plan rengi */
+  padding: 10px 25px; /* İç boşluk */
+  border: none; /* Kenarlık yok */
+  font-size: 1.2rem; /* Yazı boyutu */
+  border-radius: 5px; /* Köşe yuvarlama */
+  cursor: pointer; /* Tıklanabilir hale getirme */
+  display: none; /* Başlangıçta gizle */
+}
+
+/* Yeniden başlatma butonunun üzerine gelindiğinde stil */
+#play-again:hover {
+  padding: 10px 40px; /* İç boşluğu artır */
+  background-color: #08d9d6; /* Arka plan rengini değiştir */
+  color: #000; /* Yazı rengini siyah yap */
+}
+/* Kazanan kutular için animasyon */
+@keyframes winnerAnimation {
+  0% {
+    background-color: #08d9d6; /* Başlangıç rengi */
+    transform: scale(1); /* Başlangıç boyutu */
+  }
+  50% {
+    background-color: #ff2e63; /* Orta noktada renk değişimi */
+    transform: scale(1.2); /* Orta noktada kutu biraz büyür */
+  }
+  100% {
+    background-color: #08d9d6; /* Animasyon bitiminde tekrar eski renge döner */
+    transform: scale(1); /* Son boyut */
+  }
+}
+
+/* Kazanan kutuların stilleri */
+.winner {
+  animation: winnerAnimation 2s ease-in-out infinite; /* Animasyonu uygula */
+}

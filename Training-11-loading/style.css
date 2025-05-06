@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #474e93;
+  color: whitesmoke;
+  font-family: sans-serif;
+}
+.container {
+  width: 400px;
+  text-align: center;
+  position: relative;
+}
+.counter {
+  font-size: 40px;
+}
+.Loadingbarfront {
+  height: 10px;
+  background-color: #e73879;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  width: 0%;
+}
+.Loadingbarground {
+  height: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  position: absolute;
+  background: white;
+}

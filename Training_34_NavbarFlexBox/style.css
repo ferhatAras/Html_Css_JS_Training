@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f6f0f0;
+  padding: 10px 20px;
+  position: relative; /* Menü ikonunun konumunu ayarlamak için eklendi */
+}
+
+nav a {
+  color: #003c43;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+}
+
+.navigation li {
+  margin: 0;
+}
+
+.navigation a {
+  padding: 15px;
+  display: block;
+  transition: all 0.7s;
+}
+
+.navigation a:hover {
+  background-color: rgb(180, 180, 180);
+  transform: scale(0.9);
+  border-radius: 10px;
+}
+
+/* Hamburger Menüyü Gizle (Masaüstünde) */
+.menu-icon {
+  display: none;
+}
+
+/* 📌 RESPONSIVE TASARIM (MOBİL) */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navigation a {
+    border-bottom: 1px solid rgba(180, 180, 180, 0.3);
+    border-top: 1px solid rgba(180, 180, 180, 0.3);
+  }
+
+  .navigation {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out,
+      transform 0.7s ease-in-out;
+  }
+
+  .navigation li {
+    text-align: center;
+    width: 100%;
+  }
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* 📌 Menü Açılınca Yumuşak Geçiş */
+  .navigation.active {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
