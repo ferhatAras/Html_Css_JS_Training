@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --background: #2c2c2c;
+  --active: #00c896;
+}
+
+body {
+  font-family: "Open Sans" sans-serif;
+  background: var(--background);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.socials-wrapper {
+  position: relative;
+}
+.socials-menu {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.active > .socials-menu {
+  opacity: 1;
+}
+.share-button {
+  position: absolute;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+  transition: all 400ms ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  outline: 2px solid #fff;
+  outline-offset: 5px;
+}
+.share-button img {
+  height: 30px;
+  width: 30px;
+}
+img {
+  height: 32px;
+  width: 32px;
+  transition: all 0.3s;
+}
+.active .share-button,
+.share-button:hover {
+  background-color: var(--active);
+  transform: scale(1.1);
+}
+.social {
+  position: absolute;
+  list-style: none;
+  transition: all 0.5s ease-in-out;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+.social a {
+  display: grid;
+  cursor: pointer;
+  place-items: center;
+}
+.social:hover img {
+  transform: scale(1.1);
+}
+.active .social:nth-child(1) {
+  transform: translateX(-82px);
+}
+.active .social:nth-child(1):hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf797 5%,
+    #fd5979 45%,
+    #d6279f 60%,
+    #285aeb 90%
+  );
+}
+
+.active .social:nth-child(2) {
+  transform: translateY(-82px);
+}
+.active .social:nth-child(2):hover {
+  background-color: #25d366;
+}
+.active .social:nth-child(3) {
+  transform: translateX(+82px);
+}
+.active .social:nth-child(3):hover {
+  background-color: #1d9bf0;
+}
+
+.active .social:nth-child(4) {
+  transform: translateY(82px);
+}
+.active .social:nth-child(4):hover {
+  background-color: #e52d27;
+}
