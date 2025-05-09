@@ -16,9 +16,9 @@ const toogleScoials = () => {
   // Paylaşma butonu resminin kaynak yolunu kontrol et
 
   if (ShareButtonImage.src.includes("share")) {
-    ShareBtn.src = "img/close.png";
+    ShareButtonImage.src = "img/close.png";
   } else {
-    ShareBtn.src = "img/share.png";
+    ShareButtonImage.src = "img/share.png";
   }
 };
 
