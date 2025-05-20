@@ -1,17 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Link Kısaltma</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Link Kısaltma</h1>
+      <h1>Link Kısaltma Projesi</h1>
       <div class="input-container">
-        <input type="text" id="orjinal-linl" placeholder="Link Gir." />
+        <input
+          type="text"
+          id="original-link"
+          placeholder="Orjinal Linki Girin..."
+        />
         <button id="kisa">Kısalt</button>
+      </div>
+      <p id="short-link"></p>
+      <div id="kisaltilanlar">
+        <!-- JS ile kısaltılan linkler burada görüntülecek -->
       </div>
     </div>
     <script src="script.js"></script>
